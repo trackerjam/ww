@@ -1,0 +1,269 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #5C6BC0; /* Blue sampled from the logo */
+    --background-color: #ffffff; /* White background */
+    --card-background: #ffffff; /* Cards are also white */
+    --text-color: #2d3748; /* Dark gray for primary text (good contrast) */
+    --text-color-secondary: #718096; /* Lighter gray for secondary text */
+    --border-color: #e2e8f0; /* Light gray for borders */
+    --tag-background: #eef2ff; /* Very light blue/indigo for tags */
+    --tag-text-color: var(--primary-color); /* Use primary color for tag text */
+    --link-hover-color: #7986CB; /* Lighter blue for hover */
+    --font-family: 'Poppins', sans-serif;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Subtle shadow */
+    --card-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-weight: 400; /* Slightly bolder base weight */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 0.8em;
+    line-height: 1.3;
+    color: #1a202c; /* Even darker for headings */
+}
+
+h2 {
+   font-size: 2rem; /* Slightly smaller */
+   text-align: center;
+   margin-bottom: 1.5em;
+   color: var(--text-color); /* Dark text for section titles */
+   /* Optional: Add a subtle bottom border instead of color
+   padding-bottom: 0.5em;
+   border-bottom: 1px solid var(--border-color); */
+}
+
+h3 {
+    font-size: 1.3rem; /* Slightly smaller */
+    color: #1a202c;
+}
+
+p {
+    margin-bottom: 1em;
+    color: var(--text-color-secondary); /* Use secondary text color */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Header --- */
+.header {
+    background-color: var(--background-color);
+    padding: 30px 0 25px; /* Slightly reduced padding */
+    text-align: center;
+    /* Removed border, add subtle shadow for separation */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: sticky; /* Optional: makes header stick slightly */
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 15px;
+    height: 105px; /* Adjusted size */
+    width: auto;
+}
+
+.logo_trackerjam {
+    display: block;
+    margin: 0 auto;
+    height: 150px; /* Adjusted size */
+    width: auto;
+}
+.logo_hard {
+    display: block;
+    margin: 0 auto;
+    height: 150px; /* Adjusted size */
+    width: auto;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.2em;
+}
+
+.tagline {
+    font-size: 1rem;
+    color: var(--text-color-secondary);
+    font-weight: 300;
+}
+
+/* --- Main Content Sections --- */
+.main-content section {
+    padding: 50px 0; /* Slightly reduced padding */
+}
+
+/* --- Portfolio Section --- */
+.portfolio-section {
+     background-color: #f7fafc; /* Very light gray background for slight contrast */
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 25px; /* Slightly reduced gap */
+}
+
+.brand-card {
+    background-color: var(--card-background);
+    padding: 25px; /* Adjusted padding */
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.brand-card h3 {
+    margin-bottom: 0.5em;
+}
+
+.brand-card p {
+    flex-grow: 1;
+    font-size: 0.9rem; /* Slightly smaller text */
+    margin-bottom: 1.5em;
+}
+
+.brand-link {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 9px 16px; /* Adjusted padding */
+    border-radius: 5px;
+    font-weight: 500; /* Medium weight */
+    text-align: center;
+    margin-bottom: 1.2em; /* Space before the tag */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.brand-link:hover {
+    background-color: var(--link-hover-color);
+    color: #fff;
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* Airtable-like Tag Styling */
+.brand-type {
+    font-size: 0.75rem; /* Smaller font for tags */
+    font-weight: 500;
+    color: var(--tag-text-color);
+    background-color: var(--tag-background);
+    padding: 4px 10px; /* Padding for tag */
+    border-radius: 4px; /* Slightly rounded corners */
+    align-self: flex-start;
+    margin-top: auto;
+    display: inline-block; /* Make it inline block */
+}
+
+
+/* --- Contact Section --- */
+.contact-section {
+    background-color: var(--background-color); /* White background */
+    text-align: center;
+    border-top: 1px solid var(--border-color); /* Add a separator line */
+}
+
+.contact-section h2 {
+    margin-bottom: 0.8em;
+}
+.contact-section p {
+    margin-bottom: 1.5em;
+    color: var(--text-color-secondary);
+}
+
+/* Clean Button Style */
+.contact-link {
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    background-color: transparent; /* Transparent background */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.contact-link:hover {
+     background-color: var(--primary-color);
+     color: #fff; /* White text on hover */
+}
+
+
+/* --- Footer --- */
+.footer {
+    background-color: #f7fafc; /* Match portfolio background */
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 0; /* Remove margin as contact section has border now */
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem; /* Smaller footer text */
+    color: var(--text-color-secondary);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    .header {
+        padding: 20px 0 15px;
+        position: static; /* Remove sticky on mobile if it causes issues */
+    }
+    .logo {
+        height: 50px;
+    }
+    .main-content section {
+        padding: 35px 0;
+    }
+    .brand-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+     .brand-card {
+        padding: 20px;
+    }
+}
